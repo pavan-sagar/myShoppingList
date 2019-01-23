@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script>
+    var app = angular.module("myShoppingListMod", []);
+    app.controller("myShoppingListCtrl", function ($scope) {
+
+      $scope.items = ["apple", "ball", "catz"];
+      $scope.addItem = function () {
+        $scope.items.push($scope.newItem);
+        $scope.newItem = '';
+      };
+    });
+  </script>
+  <style></style>
+</head>
+
+<body>
+  <div class="container" ng-app="myShoppingListMod" ng-controller="myShoppingListCtrl">
+    <div class="myShoppingList shadow" style="margin-top:25vh;width:25vw;height:auto;border-top:1px solid rgba(204, 204, 204, 0.849);">
+      <h1 style="margin-bottom: 07vh;">My shopping list :</h1>
+      <ul class="list-group">
+        <li ng-repeat="x in items track by $index" class="list-group-item"><span ng-click=>{{ x }}</span></li>
+        <span class="mb-4"></span>
+      </ul>
+
+      <input type="text" name="newItem" ng-model="newItem" class="form-control ml-1 d-inline" style="width:62%;"">
+      <span class=" input-group-button">
+      <button class="btn btn-info mb-1" value="Add Item" style="margin-left:0;width:33%" ng-click="addItem()">
+        Add Item
+      </button>
+      </span>
+      
+    </div>
+  </div>
+</body>
+
+</html>
