@@ -16,6 +16,9 @@
 
       $scope.items = ["apple", "ball", "catz"];
       $scope.addItem = function () {
+        if ($scope.newItem == undefined || $scope.newItem == "")
+          return (alert('Item name cannot be blank'));
+
         $scope.items.push($scope.newItem);
         $scope.newItem = '';
       };
