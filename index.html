@@ -19,6 +19,9 @@
         $scope.items.push($scope.newItem);
         $scope.newItem = '';
       };
+      $scope.strikeToggle = function () {
+        $scope.shop_item.css
+      };
     });
   </script>
   <style></style>
@@ -29,17 +32,17 @@
     <div class="myShoppingList shadow" style="margin-top:25vh;width:25vw;height:auto;border-top:1px solid rgba(204, 204, 204, 0.849);">
       <h1 style="margin-bottom: 07vh;">My shopping list :</h1>
       <ul class="list-group">
-        <li ng-repeat="x in items track by $index" class="list-group-item"><span ng-click=>{{ x }}</span></li>
+        <li ng-repeat="x in items track by $index" class="list-group-item" ng-click="strikeToggle();"><span ng-model="shop_item">{{ x }}</span></span></li>
         <span class="mb-4"></span>
       </ul>
 
       <input type="text" name="newItem" ng-model="newItem" class="form-control ml-1 d-inline" style="width:62%;">
       <span class="input-group-button">
-      <button class="btn btn-info mb-1" value="Add Item" style="margin-left:0;width:33%" ng-click="addItem()">
-        Add Item
-      </button>
+        <button class="btn btn-info mb-1" value="Add Ite" style="margin-left:0;width:33%" ng-click="addItem()">
+          Add Item
+        </button>
       </span>
-      
+
     </div>
   </div>
 </body>
