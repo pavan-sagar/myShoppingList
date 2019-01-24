@@ -19,8 +19,15 @@
         $scope.items.push($scope.newItem);
         $scope.newItem = '';
       };
-      $scope.strikeToggle = function () {
-        $scope.shop_item.css
+      $scope.strikeToggle = function (x) {
+
+        $(function () {
+          if (($("#" + x).css('text-decoration')).includes('line-through'))
+            $("#" + x).css('text-decoration', 'none');
+          else
+            $("#" + x).css('text-decoration', 'line-through');
+        });
+
       };
     });
   </script>
@@ -32,7 +39,7 @@
     <div class="myShoppingList shadow" style="margin-top:25vh;width:25vw;height:auto;border-top:1px solid rgba(204, 204, 204, 0.849);">
       <h1 style="margin-bottom: 07vh;">My shopping list :</h1>
       <ul class="list-group">
-        <li ng-repeat="x in items track by $index" class="list-group-item" ng-click="strikeToggle();"><span ng-model="shop_item">{{ x }}</span></span></li>
+        <li ng-repeat="x in items track by $index" class="list-group-item" ng-click="strikeToggle($index)" id="{{$index}}">{{ x }}</li>
         <span class="mb-4"></span>
       </ul>
 
