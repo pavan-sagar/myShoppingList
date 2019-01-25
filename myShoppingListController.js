@@ -1,9 +1,15 @@
 var app = angular.module("myShoppingListMod", []);
 app.controller("myShoppingListCtrl", function ($scope) {
 
+
+
     $scope.items = [];/* ["apple", "ball", "catz"]; */
 
+    $scope.isItemsListEmpty = function () {
+        return ($scope.items.length < 1)
+    }
     $scope.addItem = function () {
+
         if ($scope.newItem == undefined || $scope.newItem == "")
             return (alert('Item name cannot be blank'));
 
@@ -11,6 +17,7 @@ app.controller("myShoppingListCtrl", function ($scope) {
 
         $scope.newItem = '';
     };
+
     $scope.strikeToggle = function (x) {
 
         $(function () {

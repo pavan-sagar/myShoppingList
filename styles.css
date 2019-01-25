@@ -1,0 +1,52 @@
+#main_container{
+    text-align : center;
+}
+
+
+#list_container{
+
+top:30vh;
+min-width:30%;
+min-height:40vh;
+border-top:1px solid rgba(204, 204, 204, 0.849);
+position:relative;
+display:inline-block;
+
+}
+
+#list_name{
+
+    margin-bottom: 07vh;
+}
+
+#empty_warning{
+
+    position:relative;
+    top:0;width:6em;
+}
+
+#space_filler{
+
+    margin-top:3em;
+
+}
+
+#inputcontrols_container{
+
+    position:absolute;
+    bottom: 0;
+    width:100%;
+    height:auto;
+
+}
+
+#item_input{
+
+    position:absolute;display:inline-block;width:60%;left:0.1em;bottom:0.68em;margin-right:1em;
+}
+
+#button_input{
+    
+    position:absolute;width:33%;right:0.5em;bottom:0.5em;display:inline-block;margin-left:0.4em;
+
+}

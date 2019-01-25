@@ -6,6 +6,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="styles.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
@@ -15,21 +16,22 @@
 </head>
 
 <body>
-  <div class="container" style="text-align: center" ng-app="myShoppingListMod" ng-controller="myShoppingListCtrl">
+  <div class="container" id="main_container" ng-app="myShoppingListMod" ng-controller="myShoppingListCtrl">
 
 
-    <div class="myShoppingList shadow" style="top:30vh;min-width:30%;height:auto;border-top:1px solid rgba(204, 204, 204, 0.849);position:relative;display:inline-block;">
+    <div class="myShoppingList shadow" id="list_container">
 
-      <h1 style="margin-bottom: 07vh;">My shopping list:</h1>
+      <h1 id="list_name">My shopping list:</h1>
+      <span class="d-inline-block" ng-show="isItemsListEmpty()" id="empty_warning">Your list is empty. Why not add some items ! </span>
 
       <ul class="list-group">
-        <li ng-repeat="x in items track by $index" class="list-group-item" ng-click="strikeToggle($index)" id="{{$index}}">{{ x }}</li>
-        <span class="mb-4" style="margin-top:3em;">
+        <li ng-repeat=" x in items track by $index" class="list-group-item" ng-click="strikeToggle($index)" id="{{$index}}">{{ x }}</li>
+        <span class="mb-4" id="space_filler">
       </ul>
       </span>
-      <div style="position:absolute;bottom: 0;width:100%;height:auto;">
-        <input type="text" name="newItem" ng-model="newItem" class="form-control ml-1" style="position:absolute;display:inline-block;width:60%;left:0.1em;bottom:0.68em;margin-right:1em;">
-        <button class="btn btn-info mb-1" value="Add Item" style="position:absolute;width:33%;right:0.5em;bottom:0.5em;display:inline-block;margin-left:0.4em;" ng-click="addItem()">
+      <div id="inputcontrols_container">
+        <input type="text" name="newItem" ng-model="newItem" class="form-control ml-1" id="item_input">
+        <button class="btn btn-info mb-1" value="Add Item" id="button_input" ng-click="addItem()">
           Add Item
         </button>
       </div>
