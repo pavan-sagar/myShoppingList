@@ -10,48 +10,29 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-  <script>
-    var app = angular.module("myShoppingListMod", []);
-    app.controller("myShoppingListCtrl", function ($scope) {
-
-      $scope.items = ["apple", "ball", "catz"];
-      $scope.addItem = function () {
-        if ($scope.newItem == undefined || $scope.newItem == "")
-          return (alert('Item name cannot be blank'));
-
-        $scope.items.push($scope.newItem);
-        $scope.newItem = '';
-      };
-      $scope.strikeToggle = function (x) {
-
-        $(function () {
-          if (($("#" + x).css('text-decoration')).includes('line-through'))
-            $("#" + x).css('text-decoration', 'none');
-          else
-            $("#" + x).css('text-decoration', 'line-through');
-        });
-
-      };
-    });
-  </script>
+  <script src="myShoppingListController.js"></script>
   <style></style>
 </head>
 
 <body>
-  <div class="container" ng-app="myShoppingListMod" ng-controller="myShoppingListCtrl">
-    <div class="myShoppingList shadow" style="margin-top:25vh;width:25vw;height:auto;border-top:1px solid rgba(204, 204, 204, 0.849);">
-      <h1 style="margin-bottom: 07vh;">My shopping list :</h1>
+  <div class="container" style="text-align: center" ng-app="myShoppingListMod" ng-controller="myShoppingListCtrl">
+
+
+    <div class="myShoppingList shadow" style="top:30vh;min-width:30%;height:auto;border-top:1px solid rgba(204, 204, 204, 0.849);position:relative;display:inline-block;">
+
+      <h1 style="margin-bottom: 07vh;">My shopping list:</h1>
+
       <ul class="list-group">
         <li ng-repeat="x in items track by $index" class="list-group-item" ng-click="strikeToggle($index)" id="{{$index}}">{{ x }}</li>
-        <span class="mb-4"></span>
+        <span class="mb-4" style="margin-top:3em;">
       </ul>
-
-      <input type="text" name="newItem" ng-model="newItem" class="form-control ml-1 d-inline" style="width:62%;">
-      <span class="input-group-button">
-        <button class="btn btn-info mb-1" value="Add Item" style="margin-left:0;width:33%" ng-click="addItem()">
+      </span>
+      <div style="position:absolute;bottom: 0;width:100%;height:auto;">
+        <input type="text" name="newItem" ng-model="newItem" class="form-control ml-1" style="position:absolute;display:inline-block;width:60%;left:0.1em;bottom:0.68em;margin-right:1em;">
+        <button class="btn btn-info mb-1" value="Add Item" style="position:absolute;width:33%;right:0.5em;bottom:0.5em;display:inline-block;margin-left:0.4em;" ng-click="addItem()">
           Add Item
         </button>
-      </span>
+      </div>
 
     </div>
   </div>
