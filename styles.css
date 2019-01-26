@@ -42,11 +42,21 @@ display:inline-block;
 
 #item_input{
 
-    position:absolute;display:inline-block;width:60%;left:0.1em;bottom:0.68em;margin-right:1em;
+    position:absolute;
+    display:inline-block;
+    width:60%;
+    left:0.1em;
+    bottom:0.68em;
+    margin-right:1em;
 }
 
 #button_input{
     
-    position:absolute;width:33%;right:0.5em;bottom:0.5em;display:inline-block;margin-left:0.4em;
+    position:absolute;
+    width:33%;
+    right:0.5em;
+    bottom:0.5em;
+    display:inline-block;
+    margin-left:0.4em;
 
 }
