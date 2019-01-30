@@ -31,7 +31,7 @@ app.controller("myShoppingListCtrl", function ($scope) {
 
     $scope.itemRemove = function (x) {
         $scope.items.splice(x, 1);
-
+        $scope.strikeToggle(x);
 
     };
 });
