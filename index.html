@@ -25,10 +25,13 @@
       <span class="d-inline-block" ng-show="isItemsListEmpty()" id="empty_warning">Your list is empty. Why not add some items ! </span>
 
       <ul class="list-group">
-        <li ng-repeat=" x in items track by $index" class="list-group-item" ng-click="strikeToggle($index)" id="{{$index}}">{{ x }}</li>
-        <span class="mb-4" id="space_filler">
+
+        <li ng-repeat=" x in items track by $index" class="list-group-item" ng-click="strikeToggle($index)" id="{{$index}}">{{ x }}<span class="close" id="{{$index}}_item_closer" ng-click="itemRemove($index)">&times;</span></li>
+
+        <span class="mb-4" id="space_filler"></span>
       </ul>
-      </span>
+
+
       <div id="inputcontrols_container">
         <input type="text" name="newItem" ng-model="newItem" class="form-control ml-1" id="item_input">
         <button class="btn btn-info mb-1" value="Add Item" id="button_input" ng-click="addItem()">
