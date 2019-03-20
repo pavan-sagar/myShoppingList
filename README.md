@@ -1,6 +1,6 @@
 # myShoppingList
 
-This is your regular shopping list application. I'll add and update below list of features as and when I get ideas.<br/>
+This is your regular shopping list application built using AngularJS. I'll add and update below list of features as and when I get ideas.<br/>
 Live version deployed at https://my-shoppinglist.herokuapp.com/.
 
 
