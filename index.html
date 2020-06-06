@@ -25,7 +25,7 @@
       <span class="d-inline-block" ng-show="isItemsListEmpty()" id="empty_warning">Your list is empty. Why not add some items ! </span>
 
       <ul class="list-group">
-        this is test line
+        
         <li ng-repeat=" x in items track by $index" class="list-group-item" ng-click="strikeToggle($index)" id="{{$index}}">{{ x }}<span class="close" ng-click="itemRemove($index)">&times;</span></li>
 
         <span class="mb-4" id="space_filler"></span>
